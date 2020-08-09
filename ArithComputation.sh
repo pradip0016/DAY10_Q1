@@ -16,3 +16,11 @@ dict[UC2]=$(( $a + $b * $c ))
 dict[UC3]=$(( $a * $b + $c ))
 dict[UC4]=$(( $c + $a / $b ))
 dict[UC5]=$(( $a % $b + $c ))
+
+count=0
+for value in ${dict[@]}
+do
+    array[$count]=$value
+    ((count++))
+done
+echo "Array values: " ${array[@]}
