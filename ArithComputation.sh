@@ -12,15 +12,20 @@ echo "A: "$a
 echo "B: "$b
 echo "C: "$c
 declare -A dict
-dict[UC2]=$(( $a + $b * $c ))
-dict[UC3]=$(( $a * $b + $c ))
-dict[UC4]=$(( $c + $a / $b ))
-dict[UC5]=$(( $a % $b + $c ))
+dict[0]=$(( $a + $b * $c ))
+dict[1]=$(( $a * $b + $c ))
+dict[2]=$(( $c + $a / $b ))
+dict[3]=$(( $a % $b + $c ))
 
-count=0
-for value in ${dict[@]}
+#store
+
+for (( i=0 ; i<${#dict[@]} ; i++ ))
 do
-    array[$count]=$value
-    ((count++))
+nos[$i]=${dict[$i]}
 done
-echo "Array values: " ${array[@]}
+
+#print array
+for ((i=0 ; i<${#dict[@]} ; i++))
+do
+echo ${nos[$i]}
+done
