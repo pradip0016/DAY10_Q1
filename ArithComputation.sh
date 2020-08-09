@@ -20,7 +20,6 @@ dict[3]=$(( $a % $b + $c ))
 #store
 
 for (( i=0 ; i<${#dict[@]} ; i++ ))
-<<<<<<< HEAD
 do
 nos[$i]=${dict[$i]}
 done
@@ -29,10 +28,6 @@ done
 for ((i=0 ; i<${#dict[@]} ; i++))
 do
 echo ${nos[$i]}
-done
-=======
-do
-nos[$i]=${dict[$i]}
 done
 
 #print array
@@ -55,4 +50,19 @@ fi
 done
 done
 echo "number after sort in Descending : ${nos[*]}"
->>>>>>> uc8
+
+#Assending order
+
+for (( i=0 ; i<${#dict[@]} ; i++ ))
+do
+for (( j=i+1 ; j<${#dict[@]} ; j++ ))
+do
+if [ ${nos[i]} -gt ${nos[j]} ]
+then
+temp=${nos[i]}
+nos[i]=${nos[j]}
+nos[j]=$temp
+fi
+done
+done
+echo "number after sort in Assending : ${nos[*]}"
