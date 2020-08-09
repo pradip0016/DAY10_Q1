@@ -12,3 +12,4 @@ echo "A: "$a
 echo "B: "$b
 echo "C: "$c
 
+x=$(( $a+$b*$c ))
