@@ -11,8 +11,8 @@ read c
 echo "A: "$a
 echo "B: "$b
 echo "C: "$c
-
-x=$(( $a+$b*$c ))
-y=$(( $a*$b+$c ))
-z=$(( $c+$a/$b ))
-w=$(( $a%$b+$c ))
+declare -A dict
+dict[UC2]=$(( $a + $b * $c ))
+dict[UC3]=$(( $a * $b + $c ))
+dict[UC4]=$(( $c + $a / $b ))
+dict[UC5]=$(( $a % $b + $c ))
